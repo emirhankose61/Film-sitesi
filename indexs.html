@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmocMovieTümİçerikler</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+    <style>
+        body {
+            background: #181818;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background: #111;
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 1.7em;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .navbar nav a {
+            color: #eee;
+            margin: 0 20px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .navbar nav a:hover {
+            color: #1ed760;
+        }
+
+        .sidebar {
+            width: 240px;
+            background: #232323;
+            padding: 40px 0 0 30px;
+            box-sizing: border-box;
+            border-right: 1px solid #232323;
+            min-height: 100vh;
+        }
+
+        .sidebar h3 {
+            margin-top: 40px;
+            color: #999;
+            letter-spacing: 1px;
+            font-size: 0.9em;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 1pc 0 0 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 16px;
+        }
+
+        .sidebar ul li a {
+            color: #ccc;
+            text-decoration: none;
+            padding: 4px 0;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .sidebar ul li a:hover {
+            color: #1ed760;
+        }
+
+        .container {
+            display: flex;
+            min-height: calc(100vh - 60px);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #filmTable {
+            color: #fff;
+            width: 100%;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 28px;
+        }
+
+        .table-card {
+            background: #202020;
+            border: 1px solid #2b2b2b;
+            border-radius: 14px;
+            padding: 18px 18px 8px 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+        }
+
+        .table-title {
+            margin: 0 0 10px 4px;
+            font-size: 1.15rem;
+            color: #eaeaea;
+            letter-spacing: .3px;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        .dataTables_wrapper,
+        .dataTables_wrapper .dataTables_info,
+        .dataTables_wrapper .dataTables_paginate,
+        .dataTables_wrapper .dataTables_length,
+        .dataTables_wrapper .dataTables_filter label,
+        .dataTables_wrapper .dataTables_filter input {
+            color: #1ed760 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <span class="logo">EmocMovie<span style="color:#1ed760">.tv</span></span>
+        <nav>
+            <a href="index.html">Anasayfa</a>
+            <a href="#">Kategoriler</a>
+            <a href="#">Diziler</a>
+            <a href="#">Filmler</a>
+            <a href="indexs.html">Tüm İçerikler</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Size Özel</h3>
+            <ul>
+                <li><a href="#">Listem</a></li>
+                <li><a href="#">Öneriler</a></li>
+                <li><a href="#">Popüler</a></li>
+                <li><a href="#">Yeni Gelenler</a></li>
+            </ul>
+            <h3>Kategoriler</h3>
+            <ul>
+                <li><a href="#">Dizi</a></li>
+                <li><a href="#">Film</a></li>
+                <li><a href="#">Aile</a></li>
+                <li><a href="#">Dram</a></li>
+                <li><a href="#">Komedi</a></li>
+                <li><a href="#">Aksiyon</a></li>
+                <li><a href="#">Gençlik</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="table-card">
+                <h2 class="table-title">Tüm İçerikler</h2>
+                <table id="filmTable" class="display">
+                    <thead>
+                        <tr>
+                            <th>Film Adı</th>
+                            <th>Tür</th>
+                            <th>Yapımcı / Stüdyo</th>
+                            <th>Yapım Yılı</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inception</td>
+                            <td>Bilim Kurgu, Aksiyon</td>
+                            <td>Warner Bros.</td>
+                            <td>2010</td>
+                        </tr>
+                        <tr>
+                            <td>The Matrix</td>
+                            <td>Bilim Kurgu, Aksiyon</td>
+                            <td>Warner Bros.</td>
+                            <td>1999</td>
+                        </tr>
+                        <tr>
+                            <td>Interstellar</td>
+                            <td>Bilim Kurgu, Dram</td>
+                            <td>Paramount Pictures, Warner Bros.</td>
+                            <td>2014</td>
+                        </tr>
+                        <tr>
+                            <td>Parasite</td>
+                            <td>Dram, Gerilim</td>
+                            <td>CJ Entertainment</td>
+                            <td>2019</td>
+                        </tr>
+                        <tr>
+                            <td>The Godfather</td>
+                            <td>Suç, Dram</td>
+                            <td>Paramount Pictures</td>
+                            <td>1972</td>
+                        </tr>
+                        <tr>
+                            <td>Tenet</td>
+                            <td>Bilim Kurgu, Aksiyon</td>
+                            <td>Warner Bros.</td>
+                            <td>2020</td>
+                        </tr>
+                        <tr>
+                            <td>Pulp Fiction</td>
+                            <td>Suç, Dram</td>
+                            <td>Miramax</td>
+                            <td>1994</td>
+                        </tr>
+                        <tr>
+                            <td>Gladiator</td>
+                            <td>Aksiyon, Tarih</td>
+                            <td>DreamWorks, Universal Pictures</td>
+                            <td>2000</td>
+                        </tr>
+                        <tr>
+                            <td>Avatar</td>
+                            <td>Bilim Kurgu, Macera</td>
+                            <td>20th Century Fox</td>
+                            <td>2009</td>
+                        </tr>
+                        <tr>
+                            <td>Fight Club</td>
+                            <td>Dram</td>
+                            <td>20th Century Fox</td>
+                            <td>1999</td>
+                        </tr>
+                        <tr>
+                            <td>Joker</td>
+                            <td>Dram, Gerilim</td>
+                            <td>Warner Bros.</td>
+                            <td>2019</td>
+                        </tr>
+                        <tr>
+                            <td>Dune</td>
+                            <td>Bilim Kurgu, Macera</td>
+                            <td>Warner Bros., Legendary Pictures</td>
+                            <td>2021</td>
+                        </tr>
+                        <tr>
+                            <td>Iron Man 3</td>
+                            <td>Aksiyon, Bilim Kurgu</td>
+                            <td>Marvel Studios</td>
+                            <td>2013</td>
+                        </tr>
+                        <tr>
+                            <td>Venom</td>
+                            <td>Aksiyon, Bilim Kurgu</td>
+                            <td>Columbia Pictures, Marvel</td>
+                            <td>2018</td>
+                        </tr>
+                        <tr>
+                            <td>Ford v Ferrari</td>
+                            <td>Aksiyon,Tarih</td>
+                            <td>James Mangold</td>
+                            <td>2019</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <script>
+            $(function () {
+                $('#filmTable').DataTable({
+                    lengthMenu: [[5, 10,-1], [5, 10, "Tümü"]],
+                    language: { url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/tr.json",
+                        info: "Toplam _TOTAL_ kayıttan _START_ - _END_ arası gösteriliyor",
+                        infoPostFix: ""
+                    }
+                });
+            });
+
+        </script>
+</body>
+</html>
